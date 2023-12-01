@@ -37,12 +37,14 @@ export const Forecast = () => {
         if (meteoForecast && meteoForecast.list) {
             let filter_array = filter(
                 meteoForecast.list, function(i){
-                    return moment.unix(i.dt).hour() === 11;
+                    return moment.unix(i.dt).hour() === 13;
                 }
             )
             return filter_array;
         }
     }, [meteoForecast])
+
+    console.log(newForecast);
 
     if (newForecast) {
         return(
